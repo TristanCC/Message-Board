@@ -1,6 +1,7 @@
 import express from "express";
 import path, { dirname } from 'path';
 import { fileURLToPath } from "url";
+import expressWs from 'express-ws';
 
 // Define __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -47,6 +48,7 @@ app.post('/new', (req, res) => {
     messages.push({ text: message, user: user, added: new Date() });
     console.log(messages)
     res.redirect('/')
+    
 })
 
 
