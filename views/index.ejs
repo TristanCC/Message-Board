@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Message Container (Scrollable) -->
+        <div class="messages-container">
+            <% messages.forEach((message) => { %>
+                <div class="message">
+                    <h1><%= message.user %></h1>
+                    <h3><%= message.text %></h3>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Fixed Form at the Bottom -->
+        <div class="sendMessage">
+            <%- include('new') %> <!-- Include your form here -->
+        </div>
+    </div>
+</body>
+</html>

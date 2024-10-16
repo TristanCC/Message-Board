@@ -1,0 +1,113 @@
+/* Ensure body takes full viewport height */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent body from scrolling */
+    background-color: #242424;
+    box-sizing: border-box;
+}
+
+.form {
+    display: flex;
+    width: 100%; /* Make the form width responsive */
+    max-width: 600px; /* Maintain a max width for larger screens */
+    justify-content: space-around;
+    flex-wrap: wrap; /* Wrap form elements on smaller screens */
+    padding: 0.5rem;
+}
+
+input {
+    padding: 1rem;
+    flex: 1; /* Allow the input field to take available space */
+    margin: 0.5rem;
+}
+
+
+/* Wrapper for overall layout */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height for the wrapper */
+    justify-content: flex-start;
+}
+
+/* Container for messages */
+.messages-container {
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    flex-grow: 1; /* Allow the message container to grow */
+    overflow-y: auto; /* Enable scrolling for the message area */
+    max-height: calc(100vh - 100px); /* Dynamic height to leave room for the fixed form */
+    box-sizing: border-box;
+}
+
+/* Style for individual message cards */
+.message {
+    background-color: #121212;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Style for the fixed form at the bottom */
+.sendMessage {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    z-index: 10; /* Ensure the form is always on top */
+}
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .messages-container {
+        padding: 0.5rem;
+    }
+    
+    .message {
+        width: 90%;
+    }
+
+    .sendMessage {
+        flex-direction: column;
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .form {
+        flex-direction: column;
+        width: 100%; /* Make sure the form fits on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .message {
+        width: 100%;
+    }
+
+    input {
+        padding: 0.75rem; /* Smaller padding for very small screens */
+    }
+
+    .sendMessage {
+        padding: 0.5rem; /* Less padding on very small screens */
+    }
+}
