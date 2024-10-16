@@ -12,7 +12,10 @@
         <div class="messages-container">
             <% messages.forEach((message) => { %>
                 <div class="message">
-                    <h1 class="message-user"><%= message.user %></h1>
+                    <div class="name-date">
+                        <h1 class="message-user"><%= message.user %></h1>
+                        <p class="date"><%= `${message.added.toLocaleString()}` %></p>
+                    </div>
                     <p class="message-text"><%= message.text %></p>
                 </div>
             <% }); %>
